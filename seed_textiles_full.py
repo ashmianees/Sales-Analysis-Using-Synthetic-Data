@@ -16,6 +16,10 @@ import random
 import requests
 from datetime import datetime, timedelta
 from collections import defaultdict
+from dotenv import load_dotenv   # <-- NEW
+
+
+load_dotenv()
 
 DB = "textiles.db"
 SEED = 42
@@ -38,7 +42,7 @@ BATCH_COMMIT = 3000
 # Helper: holiday fetch (Calendarific)
 # ---------------------------
 def fetch_holidays_calendarific(years, country_code="IN"):
-    API_KEY = "4O92vYiKIXAhc0XqLEHYyDyXsqMNg3cp"  # replace with your key
+    API_KEY = os.getenv("CALENDARIFIC_API_KEY")  # replace with your key
     holidays = {}
     base = "https://calendarific.com/api/v2/holidays"
     for y in years:

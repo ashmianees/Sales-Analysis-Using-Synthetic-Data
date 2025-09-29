@@ -211,3 +211,7 @@ __marimo__/
 
 # Databases (optional - comment out if you want them in git)
 *.db
+# .gitignore
+.env
+*.db
+__pycache__/
